@@ -6,19 +6,16 @@ discord: Tomáš#1025
 """
 
 import random
-from re import A
 
 #pomocne promenne
 oddelovac = "-" * 48
 
 #nahodne cislo
-nahodne_cislo = random.sample(range(0, 9), 4)
-if nahodne_cislo[0] == 0:
-    nahodne_cislo[0] = 1
-nahodne_cislo[0] = str(nahodne_cislo[0])
-nahodne_cislo[1] = str(nahodne_cislo[1])
-nahodne_cislo[2] = str(nahodne_cislo[2])
-nahodne_cislo[3] = str(nahodne_cislo[3])
+cisla = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+zamichat = random.sample(cisla, 4)
+if zamichat[0] == 0:
+   zamichat = random.sample(cisla, 4)
+nahodne_cislo = ''.join([str(x) for x in zamichat])
 
 #uvod
 def uvod() -> None:
@@ -92,4 +89,6 @@ def main():
         print("That's average")
     else:
         print("That's not so good")
-main()
+
+if __name__ == '__main__':
+    main()
